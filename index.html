@@ -4,80 +4,16 @@
 	<head>
 		<meta charset="utf-8">
 		<title> RockPaperScissor </title>
-		<script>
-
-			function computerPlay() {
-				let choices = [`Rock`, `Paper`, `Scissor`];
-                let index = Math.floor(Math.random() * 3);
-                index = index >= 2 ? 2 : index;
-				let computerChoice = choices[index];
-				return computerChoice;
-			}
-
-            function playRound(computerSelection, playerSelection) {
-                
-                computerSelection = computerSelection.toLowerCase();
-                playerSelection = playerSelection.toLowerCase();
-
-                if (computerSelection == `rock` && playerSelection == `paper`) {
-                    console.log(`You win! Paper beats Rock`);
-                    return `You win`;
-                } else if (computerSelection == `rock` && playerSelection == `scissor`) {
-                    console.log(`You lose! Rock beats Scissor`);
-                    return `You lose`;
-                } else if (computerSelection == `paper` && playerSelection == `scissor`) {
-                    console.log(`You win! Scissor beats Paper`);
-                    return `You win`;
-                } else if (computerSelection == `paper` && playerSelection == `rock`) {
-                    console.log(`You lose! Paper beats Rock`);
-                    return `You lose`;
-                } else if (computerSelection == `scissor` && playerSelection == `rock`) {
-                    console.log(`You win! Rock beats Scissor`);
-                    return `You win`;
-                } else if (computerSelection == `scissor` && playerSelection == `paper`) {
-                    console.log(`You lose! Scissor beats Paper`);
-                    return `You lose`;
-                } else {
-                    console.log(`Draw`);
-                    return `Draw`;
-                }
-
-            }
-            
-            function game() {
-                
-                let player = 0, computer = 0;
-                let playerSelection, computerSelection, result;
-
-                for (let i = 1; i <= 5; i++) {
-
-                    playerSelection = prompt(`Enter your choice`);
-                    computerSelection = computerPlay();
-                    result = playRound(computerSelection, playerSelection)
-
-                    if (result.indexOf(`win`) != -1) player++;
-                    else if (result.indexOf(`lose`) != -1) computer++;
-                    else;
-
-                    console.log(`Player: ${player}      Computer: ${computer}`);
-                }
-                
-                if (player > computer) {
-                    console.log(`Player wins`);
-                }
-                else if (player < computer) {
-                    console.log(`Computer wins`);
-                } else {
-                    console.log(`Draw`);
-                }
-            }
-
-            game();
-
-		</script>
+        <link rel="stylesheet" href="./styles.css">
+        <script src="./script.js" defer></script>
 	</head>
 
 	<body>
+        <div class="choices"> 
+            <button class='rock'>Rock</button>
+            <button class='paper'>Paper</button>
+            <button class='scissor'>Scissor</button>
+        </div>
 	</body>
 
 </html>
